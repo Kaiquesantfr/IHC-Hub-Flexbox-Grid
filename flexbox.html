@@ -1,11 +1,380 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox - Aula de CSS</title>
+    <link rel="stylesheet" href="flexbox.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Flexbox - Aula de CSS</h1>
+      <a href="index.html">⬅ Voltar ao Hub</a>
+    </header>
+
+    <main>
+      <section>
+        <h2>O que é o Flexbox?</h2>
+        <p>
+          O <strong>Flexbox</strong> organiza os elementos de dentro de uma
+          caixa em linha ou em coluna. Para ativar, aplicamos
+          <code>display: flex</code> na caixa externa, e tudo que está dentro
+          dela passa a ser controlado pelo flexbox.
+        </p>
+      </section>
+
+      <section>
+        <h2>Display: flex</h2>
+        <p>
+          O flexbox só começa a funcionar quando aplicamos
+          <code>display: flex</code>
+          na caixa. Compare abaixo o antes e o depois.
+        </p>
+        <div class="exemplos">
+          <div>
+            <h3>Sem flex</h3>
+            <p>
+              Sem o flexbox, cada elemento ocupa uma linha, um embaixo do outro.
+            </p>
+            <div class="caixa-flex sem-flex">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+            </div>
+          </div>
+
+          <div>
+            <h3>Com display: flex</h3>
+            <p>Os elementos ficam lado a lado, na mesma linha.</p>
+            <div class="caixa-flex">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Gap</h2>
+        <p>
+          Define o espaço entre os elementos. Funciona junto com
+          <code>display: flex</code>.
+        </p>
+
+        <div class="exemplos">
+          <div>
+            <h3>Sem gap</h3>
+            <p>Os elementos ficam grudados, sem espaço entre eles.</p>
+            <div class="caixa-flex sem-gap">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+            </div>
+          </div>
+
+          <div>
+            <h3>gap: 10px</h3>
+            <p>10 pixels de espaço entre cada elemento.</p>
+            <div class="caixa-flex gap-pequeno">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+            </div>
+          </div>
+
+          <div>
+            <h3>gap: 30px</h3>
+            <p>30 pixels de espaço, os elementos ficam bem mais afastados.</p>
+            <div class="caixa-flex gap-grande">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Flex-direction</h2>
+        <p>
+          Define se os elementos ficam em linha ou em coluna, na ordem normal ou
+          invertida.
+        </p>
+
+        <div class="exemplos">
+          <div>
+            <h3>row</h3>
+            <p>Elementos em linha, da esquerda para a direita. É o padrão.</p>
+            <div class="caixa-flex linha">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+            </div>
+          </div>
+
+          <div>
+            <h3>row-reverse</h3>
+            <p>
+              Elementos em linha, mas na ordem invertida, da direita para a
+              esquerda.
+            </p>
+            <div class="caixa-flex linha-invertida">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+            </div>
+          </div>
+
+          <div>
+            <h3>column</h3>
+            <p>Elementos em coluna, de cima para baixo.</p>
+            <div class="caixa-flex coluna">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+            </div>
+          </div>
+
+          <div>
+            <h3>column-reverse</h3>
+            <p>
+              Elementos em coluna, mas na ordem invertida, de baixo para cima.
+            </p>
+            <div class="caixa-flex coluna-invertida">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Justify-content</h2>
+        <p>
+          Alinha os elementos no eixo principal (na horizontal, quando estão em
+          linha).
+        </p>
+
+        <div class="exemplos">
+          <div>
+            <h3>flex-start</h3>
+            <p>Elementos juntos no começo da caixa.</p>
+            <div class="caixa-flex inicio">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+            </div>
+          </div>
+
+          <div>
+            <h3>center</h3>
+            <p>Elementos juntos no meio da caixa.</p>
+            <div class="caixa-flex centro">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+            </div>
+          </div>
+
+          <div>
+            <h3>flex-end</h3>
+            <p>Elementos juntos no fim da caixa.</p>
+            <div class="caixa-flex fim">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+            </div>
+          </div>
+
+          <div>
+            <h3>space-between</h3>
+            <p>
+              O primeiro fica no começo, o último no fim, e o espaço é dividido
+              entre eles.
+            </p>
+            <div class="caixa-flex espaco-entre">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+            </div>
+          </div>
+
+          <div>
+            <h3>space-around</h3>
+            <p>
+              O espaço é dividido ao redor de cada elemento, inclusive nas
+              pontas.
+            </p>
+            <div class="caixa-flex espaco-ao-redor">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Align-items</h2>
+        <p>
+          Alinha os elementos no eixo cruzado (na vertical, quando estão em
+          linha). Para ver o efeito, as caixas abaixo têm uma altura maior.
+        </p>
+
+        <div class="exemplos">
+          <div>
+            <h3>flex-start</h3>
+            <p>Elementos juntos no topo da caixa.</p>
+            <div class="caixa-flex caixa-alta topo">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+            </div>
+          </div>
+
+          <div>
+            <h3>center</h3>
+            <p>Elementos no meio da caixa, na vertical.</p>
+            <div class="caixa-flex caixa-alta meio">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+            </div>
+          </div>
+
+          <div>
+            <h3>flex-end</h3>
+            <p>Elementos juntos na base da caixa.</p>
+            <div class="caixa-flex caixa-alta base">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+            </div>
+          </div>
+
+          <div>
+            <h3>stretch</h3>
+            <p>
+              Elementos esticados até ocupar a altura toda da caixa. É o padrão.
+            </p>
+            <div class="caixa-flex caixa-alta esticar">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Centralização dupla</h2>
+        <p>
+          Juntando <code>justify-content: center</code> com
+          <code>align-items: center</code>, o elemento fica no meio da caixa, na
+          horizontal e na vertical.
+        </p>
+
+        <div class="exemplos">
+          <div>
+            <h3>justify-content + align-items</h3>
+            <p>O elemento fica exatamente no centro da caixa.</p>
+            <div class="caixa-flex caixa-alta centralizado">
+              <div class="item">A</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Flex-wrap</h2>
+        <p>
+          Define se os elementos podem descer para a linha de baixo quando não
+          cabem na caixa.
+        </p>
+
+        <div class="exemplos">
+          <div>
+            <h3>nowrap</h3>
+            <p>
+              Todos ficam na mesma linha, mesmo sem caber. A caixa ganha uma
+              barra de rolagem. É o padrão.
+            </p>
+            <div class="caixa-flex muitos sem-quebra">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+              <div class="item">D</div>
+              <div class="item">E</div>
+              <div class="item">F</div>
+            </div>
+          </div>
+
+          <div>
+            <h3>wrap</h3>
+            <p>Os elementos que não cabem descem para a linha de baixo.</p>
+            <div class="caixa-flex muitos com-quebra">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+              <div class="item">D</div>
+              <div class="item">E</div>
+              <div class="item">F</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Flex, order e align-self</h2>
+        <p>
+          Propriedades aplicadas em um elemento só, para mudar o comportamento
+          dele sem mexer nos outros.
+        </p>
+
+        <div class="exemplos">
+          <div>
+            <h3>flex: 1</h3>
+            <p>
+              O elemento B recebe <code>flex: 1</code> e cresce para ocupar todo
+              o espaço livre da caixa.
+            </p>
+            <div class="caixa-flex">
+              <div class="item">A</div>
+              <div class="item cresce">B</div>
+              <div class="item">C</div>
+            </div>
+          </div>
+
+          <div>
+            <h3>order: -1</h3>
+            <p>
+              O elemento C recebe <code>order: -1</code> e vai para o começo,
+              mesmo estando por último no HTML.
+            </p>
+            <div class="caixa-flex">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item primeiro">C</div>
+            </div>
+          </div>
+
+          <div>
+            <h3>align-self: flex-end</h3>
+            <p>
+              O elemento B recebe <code>align-self: flex-end</code> e vai para a
+              base da caixa, enquanto A e C continuam no topo.
+            </p>
+            <div class="caixa-flex caixa-alta">
+              <div class="item">A</div>
+              <div class="item embaixo">B</div>
+              <div class="item">C</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

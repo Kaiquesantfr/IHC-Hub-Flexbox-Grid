@@ -1,0 +1,100 @@
+/* base */
+.exemplos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.exemplos > div {
+  min-width: 0;
+}
+
+.caixa-flex {
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.item {
+  width: 60px;
+  height: 60px;
+  background: #00d8ff;
+  color: #000;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+/* display flex */
+.sem-flex {
+  display: block;
+}
+
+.sem-flex .item {
+  margin-bottom: 10px;
+}
+
+/* gap */
+.sem-gap { gap: 0; }
+.gap-pequeno { gap: 10px; }
+.gap-grande { gap: 30px; }
+
+/* flex-direction */
+.linha { flex-direction: row; }
+.linha-invertida { flex-direction: row-reverse; }
+.coluna { flex-direction: column; }
+.coluna-invertida { flex-direction: column-reverse; }
+
+.coluna,
+.coluna-invertida {
+  height: 280px;
+}
+
+/* justify-content */
+.inicio { justify-content: flex-start; }
+.centro { justify-content: center; }
+.fim { justify-content: flex-end; }
+.espaco-entre { justify-content: space-between; }
+.espaco-ao-redor { justify-content: space-around; }
+
+/* align-items */
+.caixa-alta { height: 150px; }
+.topo { align-items: flex-start; }
+.meio { align-items: center; }
+.base { align-items: flex-end; }
+.esticar { align-items: stretch; }
+
+.esticar .item {
+  height: auto;
+}
+
+/* centralizacao dupla */
+.centralizado {
+  justify-content: center;
+  align-items: center;
+}
+
+/* flex-wrap */
+.muitos .item {
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.sem-quebra {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.com-quebra {
+  flex-wrap: wrap;
+}
+
+/* flex, order e align-self */
+.cresce { flex: 1; }
+.primeiro { order: -1; }
+.embaixo { align-self: flex-end; }
