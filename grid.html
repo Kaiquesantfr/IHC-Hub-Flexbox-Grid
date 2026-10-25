@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid - Aula de CSS</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="grid.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Grid - Aula de CSS</h1>
+      <a href="index.html">⬅ Voltar ao Hub</a>
+    </header>
+
+    <main>
+      <section>
+        <h2>O que é o Grid?</h2>
+        <p>
+          O <strong>Grid</strong> organiza os elementos de dentro de uma caixa
+          em <strong>linhas e colunas ao mesmo tempo</strong>, como uma tabela.
+          Para ativar, aplicamos <code>display: grid</code> na caixa externa, e
+          depois definimos como ela será dividida.
+        </p>
+        <p>
+          O encontro de uma linha com uma coluna se chama
+          <strong>célula</strong>. Cada elemento ocupa uma célula da grade.
+        </p>
+      </section>
+
+      <section>
+        <h2>Display: grid</h2>
+        <p>
+          Ativa o grid. Sozinho, ele deixa os elementos em uma única coluna,
+          cada um na sua linha. Para dividir em mais colunas, precisamos da
+          propriedade da próxima seção.
+        </p>
+
+        <div class="exemplos">
+          <div>
+            <h3>display: grid</h3>
+            <p>Uma coluna só, com um elemento em cada linha.</p>
+            <div class="caixa-grid">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+              <div class="item">D</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Grid-template-columns</h2>
+        <p>
+          Define quantas colunas a grade tem e a largura de cada uma. A unidade
+          <code>fr</code> significa uma fração do espaço livre da caixa.
+        </p>
+
+        <div class="exemplos">
+          <div>
+            <h3>1fr 1fr</h3>
+            <p>Duas colunas do mesmo tamanho. Cada uma ocupa metade do espaço.</p>
+            <div class="caixa-grid duas-colunas">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+              <div class="item">D</div>
+            </div>
+          </div>
+
+          <div>
+            <h3>1fr 1fr 1fr</h3>
+            <p>
+              Três colunas do mesmo tamanho. Cada uma ocupa um terço do espaço.
+            </p>
+            <div class="caixa-grid tres-colunas">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+              <div class="item">D</div>
+              <div class="item">E</div>
+              <div class="item">F</div>
+            </div>
+          </div>
+
+          <div>
+            <h3>100px 1fr</h3>
+            <p>
+              A primeira coluna tem 100px fixos e a segunda ocupa o espaço que
+              sobrar.
+            </p>
+            <div class="caixa-grid coluna-fixa">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+              <div class="item">D</div>
+            </div>
+          </div>
+
+          <div>
+            <h3>1fr 2fr</h3>
+            <p>A segunda coluna é duas vezes maior que a primeira.</p>
+            <div class="caixa-grid colunas-proporcao">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+              <div class="item">D</div>
+            </div>
+          </div>
+
+          <div>
+            <h3>repeat(3, 1fr)</h3>
+            <p>
+              Atalho para escrever <code>1fr 1fr 1fr</code>. Repete 3 vezes uma
+              coluna de 1fr.
+            </p>
+            <div class="caixa-grid colunas-repeat">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+              <div class="item">D</div>
+              <div class="item">E</div>
+              <div class="item">F</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Grid-template-rows</h2>
+        <p>
+          Define a altura de cada linha da grade. Se não for definida, cada
+          linha ocupa só a altura do conteúdo.
+        </p>
+
+        <div class="exemplos">
+          <div>
+            <h3>50px 100px</h3>
+            <p>A primeira linha tem 50px de altura e a segunda tem 100px.</p>
+            <div class="caixa-grid tres-colunas linhas-fixas">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+              <div class="item">D</div>
+              <div class="item">E</div>
+              <div class="item">F</div>
+            </div>
+          </div>
+
+          <div>
+            <h3>1fr 2fr</h3>
+            <p>
+              A segunda linha é duas vezes mais alta que a primeira. Para
+              funcionar, a caixa precisa ter uma altura definida.
+            </p>
+            <div class="caixa-grid tres-colunas caixa-alta linhas-proporcao">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+              <div class="item">D</div>
+              <div class="item">E</div>
+              <div class="item">F</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Gap</h2>
+        <p>
+          Define o espaço entre as linhas e as colunas. Também existem o
+          <code>row-gap</code> (só entre as linhas) e o
+          <code>column-gap</code> (só entre as colunas).
+        </p>
+
+        <div class="exemplos">
+          <div>
+            <h3>gap: 10px</h3>
+            <p>10 pixels de espaço entre todas as células.</p>
+            <div class="caixa-grid tres-colunas gap-pequeno">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+              <div class="item">D</div>
+              <div class="item">E</div>
+              <div class="item">F</div>
+            </div>
+          </div>
+
+          <div>
+            <h3>gap: 30px</h3>
+            <p>30 pixels de espaço, as células ficam bem mais afastadas.</p>
+            <div class="caixa-grid tres-colunas gap-grande">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+              <div class="item">D</div>
+              <div class="item">E</div>
+              <div class="item">F</div>
+            </div>
+          </div>
+
+          <div>
+            <h3>gap: 10px 30px</h3>
+            <p>
+              O primeiro valor é o espaço entre as linhas e o segundo é o espaço
+              entre as colunas.
+            </p>
+            <div class="caixa-grid tres-colunas gap-linha-coluna">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+              <div class="item">D</div>
+              <div class="item">E</div>
+              <div class="item">F</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Grid-column e grid-row</h2>
+        <p>
+          Fazem um elemento ocupar mais de uma célula. As linhas da grade são
+          numeradas a partir do 1, começando na borda da caixa.
+        </p>
+
+        <div class="exemplos">
+          <div>
+            <h3>grid-column: span 2</h3>
+            <p>O elemento A ocupa 2 colunas.</p>
+            <div class="caixa-grid tres-colunas">
+              <div class="item ocupa-2-colunas">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+              <div class="item">D</div>
+              <div class="item">E</div>
+            </div>
+          </div>
+
+          <div>
+            <h3>grid-column: 2 / 4</h3>
+            <p>
+              O elemento B começa na linha 2 e termina na linha 4, ocupando as
+              colunas 2 e 3.
+            </p>
+            <div class="caixa-grid tres-colunas">
+              <div class="item">A</div>
+              <div class="item linha-2-a-4">B</div>
+              <div class="item">C</div>
+              <div class="item">D</div>
+              <div class="item">E</div>
+            </div>
+          </div>
+
+          <div>
+            <h3>grid-row: span 2</h3>
+            <p>O elemento A ocupa 2 linhas.</p>
+            <div class="caixa-grid tres-colunas">
+              <div class="item ocupa-2-linhas">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+              <div class="item">D</div>
+              <div class="item">E</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Justify-items, align-items e place-items</h2>
+        <p>
+          Alinham os elementos dentro da própria célula. Para ver o efeito, os
+          elementos abaixo são menores que as células.
+        </p>
+
+        <div class="exemplos">
+          <div>
+            <h3>justify-items: center</h3>
+            <p>Elementos no meio da célula, na horizontal.</p>
+            <div class="caixa-grid duas-colunas caixa-alta pequenos centro-horizontal">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+              <div class="item">D</div>
+            </div>
+          </div>
+
+          <div>
+            <h3>align-items: center</h3>
+            <p>Elementos no meio da célula, na vertical.</p>
+            <div class="caixa-grid duas-colunas caixa-alta pequenos centro-vertical">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+              <div class="item">D</div>
+            </div>
+          </div>
+
+          <div>
+            <h3>place-items: center</h3>
+            <p>
+              Atalho que junta os dois: centraliza na horizontal e na vertical.
+            </p>
+            <div class="caixa-grid duas-colunas caixa-alta pequenos centro-total">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+              <div class="item">D</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Grid-template-areas</h2>
+        <p>
+          Permite desenhar a grade com nomes. Cada elemento recebe um nome com
+          <code>grid-area</code> e a caixa define onde cada nome fica. É muito
+          usado para montar o layout de uma página.
+        </p>
+
+        <div class="exemplos">
+          <div class="largura-total">
+            <h3>topo, menu, conteudo e rodape</h3>
+            <p>
+              O topo e o rodapé ocupam as duas colunas. O menu e o conteúdo
+              ficam lado a lado no meio.
+            </p>
+            <div class="caixa-grid layout-pagina">
+              <div class="item area-topo">Topo</div>
+              <div class="item area-menu">Menu</div>
+              <div class="item area-conteudo">Conteúdo</div>
+              <div class="item area-rodape">Rodapé</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
